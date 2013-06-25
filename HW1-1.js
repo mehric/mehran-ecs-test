@@ -15,4 +15,4 @@ for (i = 2; i <= 100; ++i) {
 }
 
 fs.writeFileSync(outfile, primes);
-console.log("Script: " + __filename + "\nWrote: " + out + "To: " + outfile);
+console.log("Script: " + __filename + "\nWrote: " + primes + "To: " + outfile);
