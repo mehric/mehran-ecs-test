@@ -8,7 +8,7 @@ for (i = 2; i <= 100; ++i) {
         if (i < 100)
             primes = primes + ",";
 
-        for (j = i << 1; j <= max; j += i) {
+        for (j = i << 1; j <= 100; j += i) {
             sieve[j] = true;
         }
     }
