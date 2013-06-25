@@ -1,17 +1,22 @@
 var fs = require('fs');
 var outfile = "prime.txt";
-var sieve = [], i, j, primes = "";
+var sieve = [], c, i, j, primes = "";
+var prime = 2;
 
-for (i = 2; i <= 100; ++i) {
-    if (!sieve[i]) {
-        primes = primes + i + ",";
-
-        for (j = i << 1; j <= 100; j += i) {
-            sieve[j] = true;
-        }
+for (c = 1; c <= 100;) {
+    if (!sieve[prime]) {
+        primes = primes + prime + ",";
+        c++;
     }
+
+    for (j = prime << 1; j <= prime * prime ; j += prime) {
+        sieve[j] = true;
+    }
+
+    prime++;
 }
-primes = primes.substring(0, primes.length - 1)
+
+primes = primes.substring(0, primes.length - 1);
 
 fs.writeFileSync(outfile, primes);
 console.log("Script: " + __filename + "\nWrote: " + primes + "To: " + outfile);
